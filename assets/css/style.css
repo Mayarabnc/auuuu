@@ -9,6 +9,10 @@ h1{
 
      /*troca a color do texto*/
     color: darkred;
+
+    margin-top: 90px;
+
+    margin-bottom: 30px
 }
 h2{
     text-align: center;
@@ -127,4 +131,19 @@ ul{
 
 .imgRedonda{
     border-radius: 50%;
+}
+
+#hearder{
+
+    display: flex;
+    gap: 5px
+
+}
+
+#menu {
+    /*deixa fixo na tela*/
+position: fixed;
+top: 5%;
+width:100%;
+margin-top: -2.9em;
 }
