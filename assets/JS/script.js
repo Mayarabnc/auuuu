@@ -1,23 +1,16 @@
-/*variavel global, então chamamos ela em varias funções*/
 var nome = window.document.querySelector("#nome");
-                                /*chamo todo mundo e determino quem eu quero chamar exemplo querySelector("#nome"), 
-                                para chamar um id, ou querySelector(".nome"), para chamar uma classe.
-                                Posso usasr tambem um get, exemplo getElementById("nome"), que já especifica 
-                                o tipo do que eu quero chamar.                               
-                                */
-
-var nomeOk = false
-var emailOk = false
-var assuntoOk = false
-var mapa = document.querySelector("#mapa")
+var nomeOk = false;
+var email = false;
+var assuntoOk = false;
+var mapa = document.querySelector("#mapa");
 var email = document.querySelector("#email");
-
 var assunto = document.querySelector("#assunto");
 
 // deixa a barra lá na pagina grande 
 nome.style.width = "100%";
 email.style.width ="100%";
 assunto.style.width = "100%";
+ 
 
 function validarNome(){
     //chama uma variavel dentro da função
@@ -26,7 +19,7 @@ function validarNome(){
     //se o nome tiver menos que duas letras retornara uma mensagem de erro
     if(nome.value.length < 2){
 
-                    /*aparece a mensagem que vem depois, aqui é nome invalido :(, em baixo do campo*/
+                    /*aparece a mensagem que vem depois, nesse caso "é nome invalido :("", em baixo do campo*/
         txtNome.innerHTML = "nome invalido :(";
 
                     /*altera a cor da letra*/
@@ -41,27 +34,27 @@ function validarNome(){
     }
 }
 
- function validarEmail(){
-     let txtEmail = document.querySelector("#txtEmail");
+function validarEmail(){
+    let txtEmail = document.querySelector("#txtEmail");
 
-                        /*verifica se tem um caracter especifico*/
-     if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
+                       /*verifica se tem um caracter especifico*/
+    if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
 
-        txtEmail.innerHTML = "E-mail invalido";
-        txtEmail.style.color = "red";
-        emailOk = false;
+       txtEmail.innerHTML = "E-mail invalido";
+       txtEmail.style.color = "red";
+       emailOk = false;
 
-     }else{
+    }else{
 
-        txtEmail.innerHTML = "E-mail valido";
-        txtEmail.style.color = "green";
-        emailOk = true;
+       txtEmail.innerHTML = "E-mail valido";
+       txtEmail.style.color = "green";
+       emailOk = true;
 
-     }
+    }
 
- }
+}
 
- function validarAssunto(){
+function validarAssunto(){
 
     let txtAssunto = document.querySelector("#txtAssunto");
 
@@ -85,7 +78,6 @@ function validarNome(){
 
 
  }
-
 
  function enviar(){
 
@@ -114,3 +106,10 @@ function validarNome(){
     mapa.style.height= "450px"
 
   }
+
+    /*Limpar formulario*/
+    window.onbeforeunload = () => {
+        for(const form of document.getElementsByTagName('form')) {
+           form.reset();
+       }
+       }
